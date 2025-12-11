@@ -1,0 +1,103 @@
+/* ZÁKLAD */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1e293b;   /* tmavé moderní pozadí */
+    color: #e2e8f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* GRID ROZLOŽENÍ */
+.trida {
+    display: grid;
+    grid-template-areas:
+        "zahlavi zahlavi zahlavi"
+        "menu obsah bocnipanel"
+        "zapati zapati zapati";
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 8px;
+    padding: 8px;
+}
+
+/* VŠECHNY PANELY */
+.zahlavi, .menu, .obsah, .bocnipanel, .zapati {
+    background: rgba(255, 255, 255, 0.08);   /* lehká průhlednost */
+    border-radius: 6px;
+    padding: 12px;
+}
+
+/* HLAVIČKA */
+.zahlavi {
+    grid-area: zahlavi;
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+/* MENU */
+.menu {
+    grid-area: menu;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin-bottom: 8px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #cbd5e1;
+}
+.galerie {
+    display: flex;
+    flex-wrap: nowrap;   
+    gap: 20px;           
+    justify-content: center;  
+}
+
+.galerie img {
+    width: 300px;        
+    height: auto;
+    border-radius: 6px;
+}
+
+
+.obsah {
+    grid-area: obsah;
+}
+
+.obsah p {
+    margin-bottom: 15px;
+}
+
+
+.bocnipanel {
+    grid-area: bocnipanel;
+    text-align: right;
+}
+
+
+.zapati {
+    grid-area: zapati;
+    text-align: center;
+    font-size: 0.9em;
+    color: #94a3b8;
+}
+
+
+@media (max-width: 800px) {
+    .trida {
+        grid-template-areas:
+            "zahlavi"
+            "menu"
+            "obsah"
+            "bocnipanel"
+            "zapati";
+        grid-template-columns: 1fr;
+    }
+}
